@@ -11,15 +11,15 @@ double teylorSeries(double x, int k)
     double epsilon = pow(10, -k);
     std::cout << "epsilon = " << epsilon << std::endl;
 
-    bool Minus = false;
+    bool r = false;
 
     int v = 1;
     double result = 0;
-    double y = 0; // slagaemoe
+    double y = 0; // слагаемое
     do
     {
         y = pow(x, v) / v;
-        if (Minus)
+        if (r)
         {
             result = result - y;
         }
@@ -29,7 +29,7 @@ double teylorSeries(double x, int k)
         }
 
         v = v + 1;
-        Minus = !Minus;
+        r = !r;
     } while (abs(y) > epsilon);
 
     return result;
