@@ -109,11 +109,15 @@ int main()
     {
         if (arr[i] % 2 == 0)
         {
-
-            p = arr[j];
-            arr[j] = arr[i];
-            arr[i] = p;
-
+            if (i != j)
+            {
+                p = arr[i];
+                for (k = i; k > j; k--)
+                {
+                    arr[k] = arr[k - 1];
+                }
+                arr[j] = p;             
+            }
             j++;
         }
     }
