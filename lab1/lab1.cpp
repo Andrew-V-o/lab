@@ -30,7 +30,7 @@ double teylorSeries(double x, int k)
 
         v = v + 1;
         r = !r;
-    } while (abs(y) > epsilon);
+    } while (abs(y) > epsilon); // abs(y) - модуль y
 
     return result;
 }
@@ -62,7 +62,7 @@ if (k<1)
 
 
 double log_result = logarifm(x);
-std::cout <<"logarifm:" << std::fixed << std::setprecision(3) << log_result << std::endl;
+std::cout <<"logarifm:" << std::fixed << std::setprecision(3) << log_result << std::endl; //fixed в сочетании с setprecision(3) фиксирует целое число, а setprecision(3) выводит 3 цифры после запятой
 
 double teylorResult = teylorSeries(x, k);
 std::cout << "teylorSeries:" << std::fixed << std::setprecision(3) << teylorResult << std::endl;
