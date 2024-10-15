@@ -99,6 +99,8 @@ void the_longest_word(char *s)
 
 int main()
 {
+    SetConsoleOutputCP(65001);
+    
     // A
 
     char string[4096];
@@ -114,9 +116,9 @@ int main()
     cout << "введите исходное число: ";
     cin >> value;
 
-    SetConsoleOutputCP(65001);
+    
     char *b = func(value, string, radix);
-    cout << "преобразованное число " << value << " в строку в " << radix << "-ричной системе счисления: " << b;
+    cout << "преобразованное число " << value << " в строку в " << radix << "-ричной системе счисления: " << b << endl;
 
     // B
 
