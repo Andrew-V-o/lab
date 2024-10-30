@@ -79,25 +79,4 @@ int main()
    palindromesFile.close();
    ravnyFile.close();
 
-    /*
-        ifstream fin;
-
-        fin.open("ghf.txt");
-
-        if (!fin.is_open())
-        {
-            cout << "Ошибка открытия файла" << endl;
-        }
-
-        else
-        {
-            string str2;
-            while (!fin.eof())
-            {
-                getline(fin, str2);
-                cout << str2;
-            }
-        }
-        fin.close();
-        */
 }
