@@ -1,6 +1,5 @@
 #ifndef  CLASS_FRACTION
 #define CLASS_FRACTION
-#include <string>
 using namespace std;
 
 
@@ -11,21 +10,23 @@ private:
     int denominator;//знаменатель
 
 public:
-    int GetNumerator();
+    int getNumerator();
 
-    void SetNumerator(int V_numerator);
+    void setNumerator(int V_numerator);
 
-    int GetDenominator();
+    int getDenominator();
 
-    void SetDenominator(int V_denominator);
+    void setDenominator(int V_denominator);
 
     SimpleFraction() = delete; //запрет вызова конструктора по умолчанию
 
     SimpleFraction(int num, int det);
 
+   SimpleFraction(const SimpleFraction &p);
+
 void fraction();
 
-void operations();
+
 
 int reduction(int v, int u, int &n_, int &d_);
 

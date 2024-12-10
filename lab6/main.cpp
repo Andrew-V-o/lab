@@ -47,5 +47,5 @@ int main(){
         SimpleFraction third = first.fract(second);
         third.fraction();
     }
-    return 0;
+   
 }

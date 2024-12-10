@@ -3,19 +3,19 @@
 #include "ClassFraction.h"
 using namespace std;
 
-int SimpleFraction::GetNumerator()
+int SimpleFraction::getNumerator()
 {
     return numerator;
 }
-void SimpleFraction::SetNumerator(int V_numerator)
+void SimpleFraction::setNumerator(int V_numerator)
 {
     numerator = V_numerator;
 }
-int SimpleFraction::GetDenominator()
+int SimpleFraction::getDenominator()
 {
     return denominator;
 }
-void SimpleFraction::SetDenominator(int V_denominator)
+void SimpleFraction::setDenominator(int V_denominator)
 {
     denominator = V_denominator;
 }
@@ -64,6 +64,13 @@ SimpleFraction::SimpleFraction(int num, int det)
     denominator = det;
 }
 
+SimpleFraction::SimpleFraction(const SimpleFraction &p)
+{
+
+    numerator = p.numerator;
+    denominator = p.denominator;
+}
+
 void SimpleFraction::fraction()
 {
 
@@ -91,7 +98,7 @@ void SimpleFraction::fraction()
 
 SimpleFraction SimpleFraction::fract(SimpleFraction &second)
 {
-  int g;
+    int g;
     int n;
     string m;
 
@@ -119,7 +126,7 @@ SimpleFraction SimpleFraction::fract(SimpleFraction &second)
             {
                 if (second.numerator == 0)
                 {
-                    return SimpleFraction(1, 1);
+                    return SimpleFraction(0, 1);
                 }
                 else
                 {
@@ -144,10 +151,11 @@ SimpleFraction SimpleFraction::fract(SimpleFraction &second)
             {
                 return SimpleFraction(0, 1);
             }
-            SimpleFraction third(a3, b3);
+
+        }
+                  SimpleFraction third(a3, b3);
 
             return third;
-        }
     }
     else
     {
