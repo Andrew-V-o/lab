@@ -8,6 +8,7 @@ using namespace std;
 private:
     int numerator;//числитель
     int denominator;//знаменатель
+    
 
 public:
     int getNumerator();
@@ -20,11 +21,11 @@ public:
 
     SimpleFraction() = delete; //запрет вызова конструктора по умолчанию
 
-    SimpleFraction(int num, int det);
+    SimpleFraction(int num, int det, string c);
 
    SimpleFraction(const SimpleFraction &p);
 
-void fraction();
+void fraction(string c);
 
 
 

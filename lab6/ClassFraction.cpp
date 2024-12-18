@@ -52,7 +52,7 @@ int SimpleFraction::reduction(int v, int u, int &n_, int &d_)
     return n_ && d_;
 }
 
-SimpleFraction::SimpleFraction(int num, int det)
+SimpleFraction::SimpleFraction(int num, int det, string c)
 {
 
     int num_ = num;
@@ -71,7 +71,7 @@ SimpleFraction::SimpleFraction(const SimpleFraction &p)
     denominator = p.denominator;
 }
 
-void SimpleFraction::fraction()
+void SimpleFraction::fraction(string c)
 {
 
     if (denominator == 0)
@@ -82,16 +82,39 @@ void SimpleFraction::fraction()
     else
 
     {
-        if (numerator >= denominator)
-        {
-            int value = numerator / denominator;
-            int ost = numerator % denominator;
 
-            cout << value << " " << ost << "|" << denominator << endl;
+        if (c == "-")
+        {
+
+            if (numerator >= denominator)
+            {
+                int value = numerator / denominator;
+                int ost = numerator % denominator;
+
+                cout << "-" << value << " " << ost << "|" << denominator << endl;
+                numerator = -numerator;
+
+            }
+            else
+            {
+                cout << "-" << numerator << "/" << denominator << endl;
+                numerator = -numerator;
+            }
         }
         else
         {
-            cout << numerator << "/" << denominator << endl;
+
+            if (numerator >= denominator)
+            {
+                int value = numerator / denominator;
+                int ost = numerator % denominator;
+
+                cout << value << " " << ost << "|" << denominator << endl;
+            }
+            else
+            {
+                cout << numerator << "/" << denominator << endl;
+            }
         }
     }
 }
@@ -107,6 +130,7 @@ SimpleFraction SimpleFraction::fract(SimpleFraction &second)
 
     if (g == 1)
     {
+        string c3;
         int a3;
         int b3;
         cout << "select operation( + , / , * ) ";
@@ -126,7 +150,7 @@ SimpleFraction SimpleFraction::fract(SimpleFraction &second)
             {
                 if (second.numerator == 0)
                 {
-                    return SimpleFraction(0, 1);
+                    return SimpleFraction(0, 1, "");
                 }
                 else
                 {
@@ -143,22 +167,30 @@ SimpleFraction SimpleFraction::fract(SimpleFraction &second)
                 }
                 else
                 {
-                    return SimpleFraction(0, 1);
+                    return SimpleFraction(0, 1, "");
                 }
             }
 
             if (b3 == 0)
             {
-                return SimpleFraction(0, 1);
+                return SimpleFraction(0, 1, "");
             }
-
         }
-                  SimpleFraction third(a3, b3);
+        if(b3 < 0){
+            b3 = -b3;
+        }
+        if (a3 < 0)
+        {
+            c3 = "-";
+            a3 = -a3;
+        }
 
-            return third;
+        SimpleFraction third(a3, b3, c3);
+        third.fraction(c3);
+        return third;
     }
     else
     {
-        return SimpleFraction(0, 1);
+        return SimpleFraction(0, 1, "");
     }
 }
