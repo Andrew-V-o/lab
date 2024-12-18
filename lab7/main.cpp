@@ -19,4 +19,6 @@ int main(){
     cout << First;
     First.avarageScore();
     return 0;
+
+    int AverageGradeOfGroup(int &avarage_score);
 }

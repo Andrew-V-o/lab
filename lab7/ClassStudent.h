@@ -9,6 +9,7 @@ private:
     int course;
     int group;
     char *recordNumber;
+    
 
 public:
     char *getName();

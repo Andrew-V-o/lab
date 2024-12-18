@@ -32,14 +32,15 @@ void StudentAfterSecondSession::avarageScore()
 
     double avarage_score = (avarage_score1 + avarage_score2) / 2;
     cout << endl;
-    cout << avarage_score1 << endl;
-    cout << avarage_score2<< endl;
-    cout << avarage_score;
+    cout << "Average score after the first session = " << avarage_score1 << endl;
+    cout << "Average score after the second session = " << avarage_score2<< endl;
+    cout << "Average score after the first course = " << avarage_score;
 }
+
 
 ostream &operator<<(ostream &os, StudentAfterSecondSession stud)
 {
-    os << stud.getName() << " " << stud.getCourse() << " " << stud.getGroup() << " " << stud.getRecordNumber() << endl;
+    os << stud.getName() << " Course " << stud.getCourse() << " Group " << stud.getGroup() << " RecordNumber " << stud.getRecordNumber() << endl;
     os << "Scores after first session ";
     for (int i = 0; i < 4; i++)
     {
@@ -52,4 +53,8 @@ ostream &operator<<(ostream &os, StudentAfterSecondSession stud)
         os << stud.getScore2(i) << " ";
     }
     return os;
+
 }
+
+
+

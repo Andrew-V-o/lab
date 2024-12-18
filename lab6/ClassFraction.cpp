@@ -133,7 +133,7 @@ SimpleFraction SimpleFraction::fract(SimpleFraction &second)
         string c3;
         int a3;
         int b3;
-        cout << "select operation( + , / , * ) ";
+        cout << "select operation( + , / , * ) " ;
         cin >> m;
         char plus = '+';
         char division = '/';

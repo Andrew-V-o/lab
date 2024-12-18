@@ -57,3 +57,4 @@ ostream &operator<<(ostream &os, Student stud)
 {
     return os << stud.getName() << " " << stud.getCourse() << " " << stud.getGroup() << " " << stud.getRecordNumber();
 }
+

@@ -17,6 +17,8 @@ public:
     void avarageScore();
 
     friend ostream &operator<<(ostream &os, StudentAfterSecondSession stud);
+
+    
 };
 
 #endif

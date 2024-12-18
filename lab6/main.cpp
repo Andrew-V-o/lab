@@ -13,7 +13,7 @@ int main()
     if (n == 1)
     {
         string c1;
-        cout << "- or + : ";
+        cout << "select the fraction sign (- or +) : ";
         cin >> c1;
         int a1;
         int b1;
@@ -30,7 +30,7 @@ int main()
     else
     {
         string c1;
-        cout << "- or + : ";
+        cout << "select the fraction sign (- or +) : ";
         cin >> c1;
         int a1;
         int b1;
@@ -44,7 +44,7 @@ int main()
         first.fraction(c1);
 
         string c2;
-        cout << "- or + : ";
+        cout << "select the fraction sign (- or +) : ";
         cin >> c2;
         int a2;
         int b2;
