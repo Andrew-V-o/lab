@@ -93,7 +93,6 @@ void SimpleFraction::fraction(string c)
 
                 cout << "-" << value << " " << ost << "|" << denominator << endl;
                 numerator = -numerator;
-
             }
             else
             {
@@ -133,7 +132,7 @@ SimpleFraction SimpleFraction::fract(SimpleFraction &second)
         string c3;
         int a3;
         int b3;
-        cout << "select operation( + , / , * ) " ;
+        cout << "select operation( + , / , * ) ";
         cin >> m;
         char plus = '+';
         char division = '/';
@@ -176,13 +175,20 @@ SimpleFraction SimpleFraction::fract(SimpleFraction &second)
                 return SimpleFraction(0, 1, "");
             }
         }
-        if(b3 < 0){
-            b3 = -b3;
-        }
-        if (a3 < 0)
+        if (b3 < 0 && a3 < 0)
         {
-            c3 = "-";
+            b3 = -b3;
             a3 = -a3;
+        }
+        if (b3 > 0 && a3 < 0)
+        {
+            a3 = -a3;
+            c3 = "-";
+        }
+        if (b3 < 0 && a3 > 0)
+        {
+            b3 = -b3;
+            c3 = "-";
         }
 
         SimpleFraction third(a3, b3, c3);
